@@ -1,0 +1,70 @@
+﻿@model IEnumerable<VinesauceBands.Models.Album>
+
+@{
+    ViewBag.Title = "Scythelord - Joel";
+}
+@section Styles{
+    <link href="@Url.Content("~/css/band.css")" rel="stylesheet" type="text/css" />
+}
+<div class="content col-12 col-sm-12 col-md-12 col-lg-12">
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+            <partial name="_Joel.cshtml" />
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+            <h2>About Scythelord</h2>
+            <hr />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 col-lg-4">
+            <img src="~/images/lg/Scythelord.jpg" alt="Toxic Minds by Scythelord album cover" class="bandImg" />
+            <br />
+        </div>
+        <div class="col-12 col-sm-12 col-md-8 col-lg-8">
+            <p>
+                <i>From the <a href="https://aminoapps.com/c/metal/page/item/scythelord/YjzC_XI6YaK2KrwlQLaj8pwD2pXN72v" class="citeLink">Metal Animo Page</a></i>
+            </p>
+            <p>
+                "Scythelord are an international death/thrash metal band. Most of the band's followers come from Twitch streamer/YouTuber Vargskelethor Joel, who has promoted the band, stating that he worked on their debut album for two years."
+            </p>
+            <p>
+                "Unlike Joel's other projects, such as Vargskelethor, Scythelord is non-comedic, and features lyrical themes such as corruption, death, war, and insanity. They describe their music as an 'international effort that combines the sonic assault of traditional thrash metal with the precision of modern production.' "
+            </p>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+            <h2>Scythelord Discography</h2>
+            <hr />
+        </div>
+
+        @foreach (var item in Model)
+        {
+            string titletarget = @item.Title.Replace(" ", String.Empty);
+
+        <div class="dropdown col-12 col-sm-12 col-md-12 col-lg-12">
+            <button class="btn btn-primary album" type="button" data-toggle="collapse" data-target="#@titletarget" aria-expanded="false" aria-controls="@titletarget">
+                <h5>
+                    @Html.DisplayFor(modelItem => item.Title)
+                    (@Html.DisplayFor(modelItem => item.Year))
+                </h5>
+            </button>
+
+            <div class="collapse" id="@titletarget">
+                <div class="card card-body">
+                    @foreach (var song in item.Songs)
+                        {
+                    <a class="text-dark " asp-area="" asp-controller="VineBand" asp-action="Comments" asp-route-id="@song.SongID">@Html.DisplayFor(modelItem => song.SongTitle)</a>
+                        }
+                </div>
+            </div>
+
+        </div>
+        }
+    </div>
+</div>

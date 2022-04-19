@@ -1,0 +1,57 @@
+﻿form {
+    padding-left: 2em;
+}
+
+.content {
+    min-height: 100vh;
+    padding: 1em 2em 2em 2em;
+    background-color: whitesmoke;
+    color: black;
+}
+
+.album{
+    width: 100%;
+    text-align: left;
+    border: 1px solid black;
+}
+
+.citeLink {
+    color: Highlight;
+}
+.caroImg {
+    margin: 1em;
+}
+.smImg {
+    display:block;
+    height: 3em;
+}
+
+.lgImg {
+    display:none;
+}
+
+.bandImg {
+    border: 2px solid black;
+    border-radius: 10px;
+    display: block;
+    width: 100%;
+}
+.about {
+    height: 3em;
+}
+@media only screen and (min-width: 768px) {
+    .content {
+        padding: 1em 5em 5em 5em;
+
+    }
+    .smImg {
+        display: none;
+    }
+    .lgImg {
+        border: 2px solid black;
+        border-radius: 10px;
+        display:block;
+        width:100%;
+    }
+
+}

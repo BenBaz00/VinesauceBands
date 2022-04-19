@@ -1,0 +1,58 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@section Styles{
+    <link href="@Url.Content("~/css/main.css")" rel="stylesheet" type="text/css" />
+}
+
+<div class="content">
+    <div class="text-center row">
+        <div class="col-4">
+            <button type="button" onclick="loadDoc()" id="logobutton">
+                <img src="~/images/sm/VineshroomIcon.png" alt="Vinesauce Logo" class="logo" />
+            </button>
+            <br/>
+        </div>
+        <div class="col-8">
+            <div class="bigfont">Music from the Vinesauce Streamers</div>
+            <br/>
+            <div>Check the links above for info on the musicians/bands.</div>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-12" id="carousel">
+            <div class="slickCarousel" >
+                <div class="caroImg">
+                    <img src="~/images/caro/dwayne.gif" alt="Vinesauce Logo" height="300"/>
+                </div>
+                <div class="caroImg">
+                    <img src="~/images/caro/O1Y_oJCY.png" alt="Vinesauce Logo" height="300"/>
+                </div>
+                <div class="caroImg">
+                    <img src="~/images/caro/vinny-mii.png" alt="Vinesauce Logo" height="300"/>
+                </div>
+                <div class="caroImg">
+                    <img src="~/images/caro/DcXl0HaVQAUQsH-.png" alt="Vinesauce Logo" height="300"/>
+                </div>
+                <div class="caroImg">
+                    <img src="~/images/caro/db3.gif" alt="Vinesauce Logo" height="300"/>
+                </div>
+                <div class="caroImg">
+                    <img src="~/images/caro/joel2.jpg" alt="Vinesauce Logo" height="300"/>
+                </div>
+            </div>
+            <br/>
+            <div class="text-center">Click the Vineshroom up top for new pictures!</div>
+        </div>
+    </div>
+    <br/>
+    <div class="row">
+        <div class="col-12 text-center ">
+            <iframe class="video" src="https://www.youtube.com/embed/R-cpyqEenMQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <br/>
+            <div><i>Save A Bone For Me</i> Music Video provided by <a href="https://danielwroblewski.com/" class="vidlink">Daniel Wroblewski</a></div>
+        </div>
+
+    </div>
+</div>

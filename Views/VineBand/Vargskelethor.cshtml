@@ -1,0 +1,63 @@
+﻿@model IEnumerable<VinesauceBands.Models.Album>
+
+@{
+    ViewBag.Title = "Vargskelethor - Joel";
+}
+@section Styles{
+    <link href="@Url.Content("~/css/band.css")" rel="stylesheet" type="text/css" />
+}
+<div class="content col-12 col-sm-12 col-md-12 col-lg-12">
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+            <partial name="_Joel.cshtml" />
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+            <h2>About Vargskelethor</h2>
+            <hr />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 col-lg-4">
+            <img src="~/images/lg/Beefzone.jpg" alt="Image of Vargskelethor's album, Beef Zone" class="bandImg" />
+            <br />
+        </div>
+        <div class="col-12 col-sm-12 col-md-8 col-lg-8">
+            <p>
+                Vargskelethor is also the name in which Joel uploads his solo materials. Most of which is humorous in nature. From Skeletons, Dissing on another streamer, and painfully singing over a MiDi of the ghostbusters theme.
+            </p>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+            <h2>Vargskelethor Discography</h2>
+            <hr />
+        </div>
+
+        @foreach (var item in Model)
+        {
+            string titletarget = @item.Title.Replace(" ", String.Empty);
+
+            <div class="dropdown col-12 col-sm-12 col-md-12 col-lg-12">
+                <button class="btn btn-primary album" type="button" data-toggle="collapse" data-target="#@titletarget" aria-expanded="false" aria-controls="@titletarget">
+                    <h5>
+                        @Html.DisplayFor(modelItem => item.Title)
+                        (@Html.DisplayFor(modelItem => item.Year))
+                    </h5>
+                </button>
+
+                <div class="collapse" id="@titletarget">
+                    <div class="card card-body">
+                        @foreach (var song in item.Songs)
+                        {
+                            <a class="text-dark " asp-area="" asp-controller="VineBand" asp-action="Comments" asp-route-id="@song.SongID">@Html.DisplayFor(modelItem => song.SongTitle)</a>
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
